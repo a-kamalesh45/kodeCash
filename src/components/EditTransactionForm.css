@@ -1,0 +1,57 @@
+.transaction-form {
+  max-width: 400px;
+  margin: 0 auto;
+  /* padding: 1.5rem; */
+  background: #ffffff;
+  border-radius: 10px;
+  /* height: 80vh; */
+  font-family: Arial, sans-serif;
+}
+
+.transaction-form h2 {
+  text-align: center;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.transaction-form label {
+  display: block;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form textarea {
+  width: 100%;
+  padding: 0.3rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-tran-recurring-checkbox {
+    width: 10% !important;
+}
+
+.transaction-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.transaction-form button {
+  width: 100%;
+  padding: 0.4rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}

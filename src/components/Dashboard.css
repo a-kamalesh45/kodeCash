@@ -1,0 +1,183 @@
+/* Root dashboard container */
+.dash-page {
+    background: linear-gradient(120deg, #1e1e1e 60%, #606060 100%);
+}
+
+.dashboard {
+  padding: 2.5rem 1.5rem;
+  /* background: linear-gradient(120deg, #181818 60%, #232526 100%); */
+  color: #f1f1f1;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Summary cards section */
+.dashboard-summary {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+/* Summary card */
+.dashboard-card {
+  flex: 1;
+  min-width: 220px;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  transition: transform 0.1s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  z-index: 2;
+}
+
+/* Green, red, blue themed cards with gradients */
+.dashboard-card-green {
+  background: linear-gradient(120deg, #45a600 0%, #0afa36 100%);
+  color: #fff;
+}
+.dashboard-card-red {
+  background: linear-gradient(120deg, #ff2d08 0%, #ff5343 100%);
+  color: #fff;
+}
+.dashboard-card-blue {
+  background: linear-gradient(120deg, #214ff3 0%, #1dc3ff 100%);
+  color: #fff;
+}
+
+/* Card title */
+.dashboard-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #f1f1f1cc;
+}
+
+/* Summary card value */
+.dashboard-card h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Recent transactions section */
+.dashboard-recent-transactions {
+  margin-bottom: 2.5rem;
+  background: #18191a;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.25rem 1rem 0.5rem 1rem;
+}
+
+.dashboard-recent-transactions h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    /* color: #f1f1f1; */
+}
+
+.dashboard-tran-summary-income{
+    color: #1ffb47;
+    font-size: 1.15rem !important;
+}
+
+.dashboard-tran-summary-expense{
+    font-size: 1.15rem !important;
+    color: #ff4332;
+}
+
+/* Charts container */
+.dashboard-charts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.dashboard-chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Each individual chart block */
+.dashboard-chart-card {
+  flex: 1;
+  min-width: 320px;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  color: #222;
+  transition: box-shadow 0.2s, transform 0.1s;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-chart-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.dashboard-chart-card h3 {
+  margin-bottom: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .dashboard-summary, .dashboard-charts {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .dashboard-card,
+  .dashboard-chart-card {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 1rem 0.5rem;
+  }
+  .dashboard-recent-transactions {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  .dashboard-card {
+    padding: 1.2rem 0.5rem;
+  }
+  .dashboard-chart-card {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Miscellaneous improvements */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232526;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 8px;
+}
+
+.pg{
+    color: #ff2929;
+}

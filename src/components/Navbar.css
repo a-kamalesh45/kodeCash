@@ -1,0 +1,148 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+}
+
+.navbar2 {
+    border-radius: 4rem;
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #021019;
+    margin: 2rem 3rem;
+    padding: 1rem 2rem;
+    box-shadow: 8px 8px 0px rgba(14, 128, 190, 0.89);
+    color: #0A1F33;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: white; */
+    /* border-radius: 3rem; */
+    overflow: hidden;
+    /* box-shadow: 0 4px 6px rgba(0,0,0,0.05); */
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem;
+    position: relative;
+}
+
+/* Vertical line (border) between items except the first */
+.nav-links li:not(:first-child) {
+    border-left: 1px solid rgba(253, 253, 253, 0.1);
+}
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(2, 148, 253, 0.981), rgba(13, 255, 0, 0.845));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #000000;
+    /* background-color: rgba(0, 119, 255, 0.15); */
+}
+
+
+.nav-links a:hover .icon {
+    filter: invert(100%);
+    /* Pure white on hover */
+    transform: scale(1.1);
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+    transition: filter 0.3s, transform 0.3s;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(10%) saturate(300%) hue-rotate(180deg) brightness(108%) contrast(95%);
+    /* Light blue tint for default state */
+}
+
+.logo-text-1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 0;
+    padding-right: 0;
+    color: rgb(0, 153, 255);
+}
+
+.logo-text-2 {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(12, 197, 21);
+}
+
+.nav-btn {
+    /* background-color: white; */
+    color: #0A1F33;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+/* .nav-btn:hover {
+    background-color: #c9edff;
+} */
