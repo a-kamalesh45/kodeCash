@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 import logo from '../assets/logo-nav.png'
+import Navbar from './Navbar';
 
 
-const Login = ({setIsLoggedIn}) => {
+const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const [formData, setFormData] = useState({
     email: '',
@@ -16,11 +17,11 @@ const Login = ({setIsLoggedIn}) => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
-    if(name === 'email') {
-      setFormData({...formData, email: value});
-    } else if(name === 'password') {
-      setFormData({...formData, password: value});
+    const { name, value } = e.target;
+    if (name === 'email') {
+      setFormData({ ...formData, email: value });
+    } else if (name === 'password') {
+      setFormData({ ...formData, password: value });
     }
   };
 
@@ -46,15 +47,16 @@ const Login = ({setIsLoggedIn}) => {
 
   return (
     <div className="auth-container">
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div className="auth-card">
         <div className="auth-header">
           <div className="logo">
-                                  <img src={logo} alt="KodeCash" />
-                                  <div>
-                                      <span className="logo-text-1">Kode</span>
-                                      <span className="logo-text-2">Cash</span>
-                                  </div>
-                              </div>
+            <img src={logo} alt="KodeCash" />
+            <div>
+              <span className="logo-text-1">Kode</span>
+              <span className="logo-text-2">Cash</span>
+            </div>
+          </div>
           <h2>Welcome Back</h2>
           <p>Sign in to manage your expenses</p>
         </div>

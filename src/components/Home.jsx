@@ -2,8 +2,10 @@ import React from 'react'
 import './Home.css'
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
+import DarkMode from './DarkMode';
 
-const Home = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+
+const Home = ({ isLoggedIn, setIsLoggedIn}) => {
 
   const handleLogout = () => {
   localStorage.removeItem("currentUser");
@@ -13,7 +15,7 @@ const Home = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
   return (
     <div className='homepage'>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div className='homesection'>
         <div className='hero-text'>
           <h1>

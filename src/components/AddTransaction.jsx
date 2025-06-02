@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './AddTransaction.css';
 import Navbar from './Navbar';
 import rightBg from '../assets/form-bg.png';
+import DarkMode from './DarkMode';
 
-const AddTransaction = ({isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+
+const AddTransaction = ({isLoggedIn, setIsLoggedIn}) => {
   const [formData, setFormData] = useState({
     amount: '',
     date: '',
@@ -110,7 +112,7 @@ localStorage.setItem('transactions', JSON.stringify(allTransactions));
 
   return (
     <div className='page-wrapper'>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div className='add-tran'>
         <form className="add-tran-transaction-form" onSubmit={handleSubmit}>
           <h2>Add New Transaction</h2>

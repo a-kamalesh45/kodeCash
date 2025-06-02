@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './SearchTransactions.css';
 import Navbar from './Navbar';
+import DarkMode from './DarkMode';
 
-const SearchTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+
+const SearchTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
     const [transactions, setTransactions] = useState([]);
     const [filtered, setFiltered] = useState([]);
 
@@ -11,6 +13,7 @@ const SearchTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) =>
     const [category, setCategory] = useState('');
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
+    
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -62,7 +65,7 @@ const SearchTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) =>
 
     return (
         <div className='page-wrapper'>
-            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
+            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
             <div className="search-page">
                 <h2>Search & Filter Transactions</h2>
 

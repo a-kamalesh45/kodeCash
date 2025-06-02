@@ -5,10 +5,12 @@ import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
     PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar
 } from 'recharts';
+import DarkMode from './DarkMode';
+
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
 
-const Dashboard = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+const Dashboard = ({ isLoggedIn, setIsLoggedIn}) => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
@@ -89,7 +91,7 @@ const user = JSON.parse(localStorage.getItem("currentUser"));
 
     return (
         <div className='dash-page'>
-            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
+            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
             <div className="dashboard">
                 {/* Summary Cards */}
                 <div className="dashboard-summary">

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
-import logo from '../assets/logo-nav.png'
+import logo from '../assets/logo-nav.png';
+import Navbar from './Navbar';
 
 
-const Signup = ({setIsLoggedIn}) => {
+const Signup = ({ isLoggedIn, setIsLoggedIn }) => {
   const [formData, setFormData] = useState({
     userId: '',
     firstName: '',
@@ -21,17 +22,17 @@ const Signup = ({setIsLoggedIn}) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if(name === 'firstName') {
+    if (name === 'firstName') {
       setFormData(prevState => ({ ...prevState, firstName: value }));
-    } else if(name === 'lastName') {
+    } else if (name === 'lastName') {
       setFormData(prevState => ({ ...prevState, lastName: value }));
-    } else if(name === 'email') {
+    } else if (name === 'email') {
       setFormData(prevState => ({ ...prevState, email: value }));
-    } else if(name === 'password') {
+    } else if (name === 'password') {
       setFormData(prevState => ({ ...prevState, password: value }));
-    } else if(name === 'confirmPassword') {
+    } else if (name === 'confirmPassword') {
       setFormData(prevState => ({ ...prevState, confirmPassword: value }));
-    } 
+    }
   };
 
   const handleSubmit = (e) => {
@@ -99,15 +100,16 @@ const Signup = ({setIsLoggedIn}) => {
 
   return (
     <div className="auth-container">
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div className="auth-card">
         <div className="auth-header">
           <div className="logo">
-                                  <img src={logo} alt="KodeCash" />
-                                  <div>
-                                      <span className="logo-text-1">Kode</span>
-                                      <span className="logo-text-2">Cash</span>
-                                  </div>
-                              </div>
+            <img src={logo} alt="KodeCash" />
+            <div>
+              <span className="logo-text-1">Kode</span>
+              <span className="logo-text-2">Cash</span>
+            </div>
+          </div>
           <h2>Create Account</h2>
           <p>Start tracking your expenses today</p>
         </div>

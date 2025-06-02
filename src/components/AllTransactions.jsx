@@ -4,10 +4,12 @@ import Navbar from './Navbar';
 import edit from '../assets/edit.svg';
 import deleted from '../assets/delete.svg';
 import EditTransactionForm from './EditTransactionForm';
+import DarkMode from './DarkMode';
 
 
 
-const AllTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+
+const AllTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
   const [transactions, setTransactions] = useState([]);
 
   const [showForm, setShowForm] = useState(false);
@@ -64,7 +66,7 @@ const AllTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
   return (
     <div className={`page-wrapper ${showForm ? 'blurred' : ''}`}>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div className="transactions-container">
         <div className="transactions-header">
           <h2>All Transactions</h2>

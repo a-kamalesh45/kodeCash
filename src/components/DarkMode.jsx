@@ -1,25 +1,27 @@
+"use client";
 import './DarkMode.css';
+
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 const DarkMode = ({ isDark, setIsDark }) => {
-
     useEffect(() => {
-        if (isDark) {
-            document.body.classList.add('dark');
-        } else {
-            document.body.classList.remove('dark');
-        }
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        document.body.classList.toggle('dark', isDark);
     }, [isDark]);
 
     const handleMode = () => {
-        setIsDark(prev => {
-            const newState = !prev;
-            console.log("Mode Change Initiated!!!", newState ? "Dark" : "Light");
-            return newState;
-        });
+        setTimeout(() => {
+            console.log("10sec to go");
+        }, 10000)
+        console.log("Clicked - Before setIsDark", isDark);
+
+        const newVal = true;
+        setIsDark(newVal);
+
+        console.log("Clicked - After setIsDark", newVal);
     };
+
+
 
     return (
         <div>

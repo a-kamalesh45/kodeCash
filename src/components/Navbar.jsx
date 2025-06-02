@@ -9,9 +9,8 @@ import login from '../assets/login.svg'
 import sign from '../assets/sign.svg'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import DarkMode from './DarkMode';
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
     useEffect(() => {
         setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true')
@@ -32,7 +31,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
     return (
         <header className="navbar">
-            <DarkMode isDark={isDark} setIsDark={setIsDark}/>
             <div className='navbar2'>
                 <Link to="/" className="logo-link">
                     <div className="logo">
@@ -53,16 +51,18 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
                     <li><Link className="nav-btn" to="/signup"><img className="icon" src={sign} alt="" />SIGN UP</Link></li>
                 </nav>)}
             </div>
-            <button className="hamburger-btn" onClick={handleHamburg}>{!menuOpen ? `☰`:`×`}</button>
+            <button className="hamburger-btn" onClick={handleHamburg}>{!menuOpen ? `☰` : `×`}</button>
             {isLoggedIn ? (<div className={`nav-links-hamburg ${menuOpen ? 'open' : ''}`}>
                 <nav >
-                    <li><div className="logo">
-                        <img src={logo} alt="KodeCash" />
-                        <div>
-                            <span className="logo-text-1">Kode</span>
-                            <span className="logo-text-2">Cash</span>
+                    <li><Link to="/" className="logo-link">
+                        <div className="logo">
+                            <img src={logo} alt="KodeCash" />
+                            <div>
+                                <span className="logo-text-1">Kode</span>
+                                <span className="logo-text-2">Cash</span>
+                            </div>
                         </div>
-                    </div></li>
+                    </Link></li>
                     <li><Link className="nav-btn" to="/dashboard" onClick={closeMenu}><img className="icon" src={dashbrd} alt="" />DASHBOARD</Link></li>
                     <li><Link className="nav-btn" to="/add-transaction" onClick={closeMenu}><img className="icon" src={add} alt="" />ADD TRANSACTIONS</Link></li>
                     <li><Link className="nav-btn" to="/all-transactions" onClick={closeMenu}><img className="icon" src={view} alt="" />ALL TRANSACTIONS</Link></li>
@@ -70,6 +70,15 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
                 </nav></div>) : (<div className={`nav-links-hamburg ${menuOpen ? 'open' : ''}`}>
                     <nav>
+                        <li><Link to="/" className="logo-link">
+                            <div className="logo">
+                                <img src={logo} alt="KodeCash" />
+                                <div>
+                                    <span className="logo-text-1">Kode</span>
+                                    <span className="logo-text-2">Cash</span>
+                                </div>
+                            </div>
+                        </Link></li>
                         <li><Link className="nav-btn" to="/login" onClick={closeMenu}><img className="icon" src={login} alt="" />LOGIN</Link></li>
                         <li><Link className="nav-btn" to="/signup" onClick={closeMenu}><img className="icon" src={sign} alt="" />SIGN UP</Link></li>
                     </nav></div>)}
