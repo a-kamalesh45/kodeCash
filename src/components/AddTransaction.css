@@ -1,8 +1,12 @@
+.page-wrapper{
+  height: 160vh;
+}
+
 .add-tran {
   display: flex;
   justify-content: center;
   align-items: stretch; 
-  height: auto;
+  height: 120vh;
   gap: 2rem;
   padding: 4rem;
   margin: 2rem 5rem;
@@ -245,6 +249,9 @@
 }
 
 @media (min-width: 900px) and (max-width: 1100px) {
+  .page-wrapper{
+    height: 145vh;
+  }
   .add-tran {
     height: 110vh;
     gap: 2rem;
@@ -267,14 +274,24 @@
   align-items: center;
   padding: 0.5rem;
   margin: 2rem 0.3rem;
+  height: 210vh;
   border: none;
   border-radius: 0;
   background: white;
   box-shadow: none;
   }
 
-  .add-tran-right-form {
-    padding: 1rem;
+  .page-wrapper{
+    height: 250vh;
+  }
+
+  .add-tran-right-form{
+    height: 55vh;
+  }
+
+  .add-tran-right-form img{
+    padding: 0.2rem;
+    height: 50vh;
   }
 }
 

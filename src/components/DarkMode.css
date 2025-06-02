@@ -75,3 +75,17 @@
 #toggle:checked + svg #stars {
   opacity: 1;
 }
+
+@media (max-width: 1300px) {
+  #theme-toggle-button {
+    left: 0.5rem;
+    top: 7rem;
+  }
+}
+@media (max-width: 815px) {
+  #theme-toggle-button {
+    left: 0.5rem;
+    top: 1rem;
+  }
+}
+
