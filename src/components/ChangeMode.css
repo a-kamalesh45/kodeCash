@@ -1,8 +1,9 @@
 .mode-btn-box {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 1rem;
     left: 1rem;
+    z-index: 555;
 }
 
 .toggle {
