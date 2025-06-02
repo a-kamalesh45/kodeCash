@@ -7,10 +7,16 @@
   padding: 2rem;
   border-radius: 12px;
 }
+.dark .search-page {
+  background: rgb(0, 0, 0);
+}
 
 .search-page h2 {
   margin-bottom: 1rem;
   text-align: center;
+}
+.dark .search-page h2 {
+  color: #eee;
 }
 
 .filters {
@@ -31,6 +37,14 @@
   border-radius: 6px;
   min-width: 160px;
 }
+.dark .filters input,
+.dark .filters select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #393939;
+  border-radius: 6px;
+  min-width: 160px;
+}
 
 .search-tran-date-filter {
   display: flex;
@@ -41,6 +55,11 @@
 .results table {
   width: 75vw;
   color: black;
+  border-collapse: collapse;
+}
+.dark .results table {
+  width: 75vw;
+  color: rgb(255, 255, 255);
   border-collapse: collapse;
 }
 

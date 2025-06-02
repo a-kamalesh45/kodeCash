@@ -13,6 +13,12 @@
   font-family: 'Arial Black', sans-serif;
 }
 
+.dark .add-tran{
+  border: 2px solid rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  box-shadow: 6px 6px 0 rgb(255, 255, 255);
+}
+
 .add-tran-transaction-form,
 .add-tran-right-form {
   flex: 1; 
@@ -24,6 +30,12 @@
   background: white;
   box-shadow: 6px 6px 0 black;
   max-width: 500px;
+}
+.dark .add-tran-transaction-form,
+.dark .add-tran-right-form {
+  border: 2px solid rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  box-shadow: 6px 6px 0 rgb(255, 255, 255);
 }
 
 .add-tran-transaction-form {
@@ -55,6 +67,10 @@
   padding-bottom: 0.5rem;
   color: #333;
 }
+.dark .add-tran-transaction-form h2 {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  color: #cfcfcf;
+}
 
 .add-tran-form-group {
   margin-bottom: 1.5rem;
@@ -67,7 +83,10 @@
   text-transform: uppercase;
   color: #333;
 }
+.dark .add-tran-form-group label {
+  color: #d4d4d4;
 
+}
 .add-tran-form-group input,
 .add-tran-form-group select,
 .add-tran-form-group textarea {
@@ -80,6 +99,14 @@
   background: white;
   box-shadow: 3px 3px 0 black;
   box-sizing: border-box;
+}
+.dark .add-tran-form-group input,
+.dark .add-tran-form-group select,
+.dark .add-tran-form-group textarea {
+  border: 2px solid rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  color: white;
+  box-shadow: 3px 3px 0 rgb(255, 255, 255);
 }
 
 .add-tran-form-group input:focus,
@@ -111,6 +138,11 @@
   position: relative;
   cursor: pointer;
 }
+.dark .add-tran-checkbox-group input[type="checkbox"] {
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 4px 4px 0 rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
 
 .add-tran-checkbox-group input[type="checkbox"]:checked::before {
   content: '✓';
@@ -123,7 +155,9 @@
   color: black;
   font-family: monospace;
 }
-
+.dark .add-tran-checkbox-group input[type="checkbox"]:checked::before {
+  color: rgb(255, 255, 255);
+}
 .add-tran-submit-btn,
 .add-tran-small-button {
   font-weight: bold;
@@ -137,10 +171,29 @@
   transition: transform 0.1s ease-in-out;
 }
 
+
+.dark .add-tran-submit-btn,
+.dark .add-tran-small-button {
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 4px 4px 0 rgb(255, 255, 255);
+  transition: transform 0.1s ease-in-out;
+}
+
 .add-tran-submit-btn {
   width: 100%;
   background: black;
   color: white;
+}
+.dark .add-tran-submit-btn {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .add-tran-submit-btn:hover,
@@ -152,6 +205,11 @@
   background: white;
   border: 2px solid black;
   color: black;
+}
+.dark.add-tran-small-button {
+  background: rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 .add-tran-new-cat-row {
@@ -168,6 +226,15 @@
   font-size: 0.9rem;
   padding: 0.75rem;
   box-shadow: 2px 2px 0 black;
+  border-radius: 0;
+}
+.dark.add-tran-new-cat-row input {
+  border: 2px solid rgb(252, 252, 252);
+  background: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  box-shadow: 2px 2px 0 rgb(255, 255, 255);
   border-radius: 0;
 }
 

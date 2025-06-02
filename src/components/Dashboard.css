@@ -1,19 +1,24 @@
-/* Root dashboard container */
 .dash-page {
-    background: linear-gradient(120deg, #1e1e1e 60%, #606060 100%);
+  background: white;
+}
+
+.dark .dash-page {
+  background: rgb(23, 22, 22);
 }
 
 .dashboard {
   padding: 2.5rem 1.5rem;
-  /* background: linear-gradient(120deg, #181818 60%, #232526 100%); */
-  color: #f1f1f1;
+  color: #000000;
   min-height: 100vh;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Summary cards section */
+.dark .dashboard {
+  color: white;
+}
+
 .dashboard-summary {
   display: flex;
   gap: 1.5rem;
@@ -28,18 +33,25 @@
   min-width: 220px;
   padding: 2rem 1.5rem;
   border-radius: 16px;
-  color: #fff;
+  color: #000000;
   text-align: center;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.326);
   transition: transform 0.1s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
 }
+.dark .dashboard-card {
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
 
 .dashboard-card:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
   z-index: 2;
+}
+.dark .dashboard-card:hover {
+  box-shadow: 0 12px 36px rgba(56, 56, 56, 0.736);
 }
 
 /* Green, red, blue themed cards with gradients */
@@ -47,13 +59,16 @@
   background: linear-gradient(120deg, #45a600 0%, #0afa36 100%);
   color: #fff;
 }
+.dashboard-card-green {
+  background: linear-gradient(120deg, #45a600 0%, #0afa36 100%);
+}
+
 .dashboard-card-red {
   background: linear-gradient(120deg, #ff2d08 0%, #ff5343 100%);
-  color: #fff;
 }
+
 .dashboard-card-blue {
   background: linear-gradient(120deg, #214ff3 0%, #1dc3ff 100%);
-  color: #fff;
 }
 
 /* Card title */
@@ -62,7 +77,10 @@
   margin-bottom: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #f1f1f1cc;
+  color: #000000cc;
+}
+.dark .dashboard-card-title {
+  color: #ffffffd4;
 }
 
 /* Summary card value */
@@ -71,33 +89,55 @@
   font-weight: 700;
   margin: 0;
   letter-spacing: 1px;
-  color: #fff;
+  color: hsl(0, 0%, 0%);
+}
+.dark .dashboard-card h2 {
+  color: hsl(0, 0%, 100%);
 }
 
 /* Recent transactions section */
 .dashboard-recent-transactions {
   margin-bottom: 2.5rem;
-  background: #18191a;
+  background: #e9e9e9;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.427);
   padding: 1.25rem 1rem 0.5rem 1rem;
+}
+.dark .dashboard-recent-transactions {
+  background: #18191a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .dashboard-recent-transactions h3 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    /* color: #f1f1f1; */
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+}
+.dark .dashboard-recent-transactions h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f4f4f4;
 }
 
-.dashboard-tran-summary-income{
-    color: #1ffb47;
-    font-size: 1.15rem !important;
+.dashboard-tran-summary-income {
+  color: #007d17 !important;
+  font-size: 1.15rem !important;
 }
 
-.dashboard-tran-summary-expense{
-    font-size: 1.15rem !important;
-    color: #ff4332;
+.dashboard-tran-summary-expense {
+  font-size: 1.15rem !important;
+  color: #ff4332 !important;
+}
+.dark .dashboard-tran-summary-income {
+  color: #1ffb47 !important;
+  font-size: 1.15rem !important;
+}
+
+.dark .dashboard-tran-summary-expense {
+  font-size: 1.15rem !important;
+  color: #ff4332 !important;
 }
 
 /* Charts container */
@@ -109,9 +149,9 @@
 }
 
 .dashboard-chart-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 /* Each individual chart block */
@@ -121,16 +161,21 @@
   padding: 1.25rem 1rem;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   color: #222;
   transition: box-shadow 0.2s, transform 0.1s;
   margin-bottom: 1.5rem;
   position: relative;
   overflow: hidden;
 }
+.dark .dashboard-chart-card {
+  background: #3b3b3b;
+  box-shadow: 0 4px 16px rgba(252, 252, 252, 0.07);
+  color: #eaeaea;
+}
 
 .dashboard-chart-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px) scale(1.01);
 }
 
@@ -140,24 +185,33 @@
   font-weight: 600;
   color: #222;
 }
+.dark .dashboard-chart-card h3 {
+  color: #f1f1f1;
+}
 
+tspan {
+  color: #ffffff;
+}
 
 @media (min-width: 320px) and (max-width: 425px) {
   .dashboard {
     padding: 1rem 0.5rem;
   }
+
   .dashboard-recent-transactions {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
+
   .dashboard-card {
     padding: 1.2rem 0.5rem;
     margin: 0 2rem;
   }
+
   .dashboard-card-title {
     font-size: 1rem;
   }
 
-  .dashboard-summary h2{
+  .dashboard-summary h2 {
     font-size: 2rem;
   }
 
@@ -167,7 +221,7 @@
     min-width: 260px;
   }
 
-  .dashboard-tran-summary-income{
+  .dashboard-tran-summary-income {
     font-size: 0.92rem !important;
   }
 
@@ -181,11 +235,12 @@
   width: 8px;
   background: #232526;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #333;
   border-radius: 8px;
 }
 
-.pg{
-    color: #ff2929;
+.pg {
+  color: #ff2929;
 }

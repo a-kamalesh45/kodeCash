@@ -7,7 +7,7 @@ import EditTransactionForm from './EditTransactionForm';
 
 
 
-const AllTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
+const AllTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
   const [transactions, setTransactions] = useState([]);
 
   const [showForm, setShowForm] = useState(false);
@@ -64,7 +64,7 @@ const AllTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <div className={`page-wrapper ${showForm ? 'blurred' : ''}`}>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
       <div className="transactions-container">
         <div className="transactions-header">
           <h2>All Transactions</h2>

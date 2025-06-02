@@ -3,7 +3,7 @@ import './Home.css'
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
-const Home = ({ isLoggedIn, setIsLoggedIn }) => {
+const Home = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
   const handleLogout = () => {
   localStorage.removeItem("currentUser");
@@ -13,7 +13,7 @@ const Home = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <div className='homepage'>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
       <div className='homesection'>
         <div className='hero-text'>
           <h1>

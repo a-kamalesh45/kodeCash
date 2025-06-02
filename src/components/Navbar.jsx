@@ -9,8 +9,9 @@ import login from '../assets/login.svg'
 import sign from '../assets/sign.svg'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import DarkMode from './DarkMode';
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
     useEffect(() => {
         setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true')
@@ -31,6 +32,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
     return (
         <header className="navbar">
+            <DarkMode isDark={isDark} setIsDark={setIsDark}/>
             <div className='navbar2'>
                 <Link to="/" className="logo-link">
                     <div className="logo">
