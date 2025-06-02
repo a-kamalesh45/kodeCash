@@ -141,19 +141,8 @@
   color: #222;
 }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .dashboard-summary, .dashboard-charts {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .dashboard-card,
-  .dashboard-chart-card {
-    min-width: 0;
-  }
-}
 
-@media (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 425px) {
   .dashboard {
     padding: 1rem 0.5rem;
   }
@@ -162,13 +151,32 @@
   }
   .dashboard-card {
     padding: 1.2rem 0.5rem;
+    margin: 0 2rem;
   }
+  .dashboard-card-title {
+    font-size: 1rem;
+  }
+
+  .dashboard-summary h2{
+    font-size: 2rem;
+  }
+
   .dashboard-chart-card {
-    padding: 1rem 0.5rem;
+    padding: 2rem 0.5rem;
+    margin: 1rem;
+    min-width: 260px;
   }
+
+  .dashboard-tran-summary-income{
+    font-size: 0.92rem !important;
+  }
+
+  .dashboard-tran-summary-expense {
+    font-size: 0.92rem !important;
+  }
+
 }
 
-/* Miscellaneous improvements */
 ::-webkit-scrollbar {
   width: 8px;
   background: #232526;

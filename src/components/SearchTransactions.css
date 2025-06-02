@@ -32,6 +32,12 @@
   min-width: 160px;
 }
 
+.search-tran-date-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .results table {
   width: 75vw;
   color: black;
@@ -53,4 +59,57 @@
 .results .red {
   color: #f44336;
   font-weight: 600;
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+
+  .search-page{
+    padding: 1rem;
+  }
+
+  .filters input,
+.filters select {
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 160px;
+}
+.filters h3{
+  font-size: 0.8rem;
+}
+
+.results th,
+.results td {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+}
+
+@media (min-width: 320px) and (max-width: 550px) {
+
+  .search-page{
+    padding: 1rem;
+  }
+
+  .filters input,
+.filters select {
+  padding: 0.3rem;
+  font-size: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 100px;
+}
+
+.filters h3{
+  font-size: 0.8rem;
+}
+
+.results th,
+.results td {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
 }

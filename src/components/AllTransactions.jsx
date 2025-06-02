@@ -95,19 +95,19 @@ const AllTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
 
                   return (
                     <tr key={tx.id} className={`tx-row ${tx.type}`}>
-                      <td className="date-column">
+                      <td className="date-column" data-label="Date">
                         <div className="date-block">
                           <span className="day">{parseInt(day)}</span>
                           <span className="month">{monthName}</span>
                         </div>
                       </td>
-                      <td>{tx.type.charAt(0).toUpperCase() + tx.type.slice(1)}</td>
-                      <td>{tx.category}</td>
-                      <td>{tx.description}</td>
-                      <td className={`amount ${tx.type}`}>
+                      <td data-label="Type">{tx.type.charAt(0).toUpperCase() + tx.type.slice(1)}</td>
+                      <td data-label="Category">{tx.category}</td>
+                      <td data-label="Description">{tx.description}</td>
+                      <td className={`amount ${tx.type}`} data-label="Amount">
                         {tx.type === 'income' ? '+' : '-'}${tx.amount}
                       </td>
-                      <td>
+                      <td data-label="Actions">
                         <button className="action-button edit" onClick={() => handleEdit(tx.id)}>
                           <img src={edit} alt="edit" />
                         </button>
@@ -115,6 +115,7 @@ const AllTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
                           <img src={deleted} alt="delete" />
                         </button>
                       </td>
+
                     </tr>
                   );
                 })

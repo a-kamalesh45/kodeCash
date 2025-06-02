@@ -13,19 +13,19 @@ const SearchTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
     const [toDate, setToDate] = useState('');
 
     useEffect(() => {
-const user = JSON.parse(localStorage.getItem("currentUser"));
-    if (!user?.email) {
-        setTransactions([]);
-        setFiltered([]);
-        return;
-    }
+        const user = JSON.parse(localStorage.getItem("currentUser"));
+        if (!user?.email) {
+            setTransactions([]);
+            setFiltered([]);
+            return;
+        }
 
-    const allTransactions = JSON.parse(localStorage.getItem('transactions')) || {};
-    const userTransactions = allTransactions[user.email] || [];
+        const allTransactions = JSON.parse(localStorage.getItem('transactions')) || {};
+        const userTransactions = allTransactions[user.email] || [];
 
-    setTransactions(userTransactions);
-    setFiltered(userTransactions);
-}, []);
+        setTransactions(userTransactions);
+        setFiltered(userTransactions);
+    }, []);
 
 
     useEffect(() => {
@@ -86,10 +86,12 @@ const user = JSON.parse(localStorage.getItem("currentUser"));
                             <option key={idx} value={cat}>{cat}</option>
                         ))}
                     </select>
-                    <h3>From:</h3>
-                    <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} />
-                    <h3>To:</h3>
-                    <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} />
+                    <div className='search-tran-date-filter'>
+                        <h3>From:</h3>
+                        <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} />
+                        <h3>To:</h3>
+                        <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} />
+                    </div>
                 </div>
 
                 <div className="results">

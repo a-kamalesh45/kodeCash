@@ -1,83 +1,59 @@
 .add-tran {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: stretch; 
+  height: auto;
   gap: 2rem;
   padding: 4rem;
   margin: 2rem 5rem;
   border: 2px solid black;
   border-radius: 0;
   background: white;
-  box-shadow: 6px 6px 0px black;
+  box-shadow: 6px 6px 0 black;
   font-family: 'Arial Black', sans-serif;
+}
+
+.add-tran-transaction-form,
+.add-tran-right-form {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 0;
+  background: white;
+  box-shadow: 6px 6px 0 black;
+  max-width: 500px;
+}
+
+.add-tran-transaction-form {
+  padding: 1rem;
+  transition: all 0.3s ease;
 }
 
 .add-tran-right-form {
   padding: 2rem;
-  width: 100%;
-  height: 100%;
-   border: 2px solid black;
-  border-radius: 0;
-  background: white;
-  box-shadow: 6px 6px 0px black;
-  max-width: 500px;
-  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); */
 }
 
 .add-tran-right-form img {
-  height: 100%;
   width: 100%;
-  object-fit: cover;
-  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); */
-}
-
-.add-tran-transaction-form {
-  width: 60vw;
-  padding: 2rem;
-  max-width: 500px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  height: 100%;
+  object-fit: cover; /* use contain if you don't want cropping */
+  flex-grow: 1;
 }
 
 .add-tran-transaction-form h2 {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
   color: #333;
-  font-size: 1.8rem;
-}
-
-.add-tran-transaction-form input,
-.add-tran-transaction-form select,
-.add-tran-transaction-form textarea {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  display: block;
-}
-
-.add-tran-transaction-form .add-tran-form-group {
-  margin-bottom: 1.2rem;
-}
-
-.add-tran-transaction-form input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5rem;
-}
-
-.add-tran-transaction-form button {
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  background: #f7f7f7;
-  color: #000;
-  cursor: pointer;
 }
 
 .add-tran-form-group {
@@ -86,29 +62,32 @@
 
 .add-tran-form-group label {
   display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
   color: #333;
 }
-/* 
+
 .add-tran-form-group input,
 .add-tran-form-group select,
 .add-tran-form-group textarea {
-  width: 30vw;
+  width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.2s ease-in-out;
-} */
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 0;
+  background: white;
+  box-shadow: 3px 3px 0 black;
+  box-sizing: border-box;
+}
 
 .add-tran-form-group input:focus,
 .add-tran-form-group select:focus,
 .add-tran-form-group textarea:focus {
   outline: none;
-  border: 2px solid rgb(34, 151, 32);
-  border-radius: 0;
-  box-shadow: 6px 6px 0px rgb(34, 151, 32);
+  border-color: rgb(34, 151, 32);
+  box-shadow: 6px 6px 0 rgb(34, 151, 32);
 }
 
 .add-tran-checkbox-group {
@@ -119,93 +98,30 @@
   margin-top: 0.5rem;
 }
 
-.add-tran-checkbox-group input {
-  width: auto;
-}
-
-.add-tran-checkbox-group label {
+.add-tran-checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
   margin: 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.add-tran-submit-btn {
-  width: 100%;
-  transition: background-color 0.25s ease;
-}
-
-.add-tran-submit-btn:hover {
-  background-color: #43a047;
-}
-
-@media (max-width: 500px) {
-  .add-tran-transaction-form {
-    padding: 2rem;
-  }
-}
-
-.add-tran-small-button {
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-  background-color: #eee;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  margin-right: 0.75rem;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 black;
+  background: white;
+  position: relative;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-.add-tran-small-button:hover {
-  background-color: #ddd;
-}
-
-.add-tran-new-cat-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.add-tran-new-cat-row input {
-  flex: 1;
-}
-
-/* Brutalist Form Overrides */
-.add-tran-transaction-form {
-  border: 2px solid black;
-  border-radius: 0;
-  background: white;
-  box-shadow: 6px 6px 0px black;
-  padding: 2rem;
-  font-family: 'Arial Black', sans-serif;
-}
-
-.add-tran-transaction-form h2 {
-  font-size: 1.5rem;
+.add-tran-checkbox-group input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 20px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-transform: uppercase;
-  border-bottom: 1px solid black;
-  padding-bottom: 0.5rem;
-}
-
-.add-tran-form-group label {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-  display: block;
-  text-transform: uppercase;
-}
-
-.add-tran-form-group input,
-.add-tran-form-group select {
-  border: 2px solid black;
-  border-radius: 0;
-  background: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-  padding: 0.75rem;
-  box-shadow: 3px 3px 0 black;
+  color: black;
+  font-family: monospace;
 }
 
 .add-tran-submit-btn,
@@ -222,8 +138,14 @@
 }
 
 .add-tran-submit-btn {
+  width: 100%;
   background: black;
   color: white;
+}
+
+.add-tran-submit-btn:hover,
+.add-tran-small-button:hover {
+  transform: translate(2px, 2px);
 }
 
 .add-tran-small-button {
@@ -232,12 +154,14 @@
   color: black;
 }
 
-.add-tran-submit-btn:hover,
-.add-tran-small-button:hover {
-  transform: translate(2px, 2px);
+.add-tran-new-cat-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .add-tran-new-cat-row input {
+  flex: 1;
   border: 2px solid black;
   background: white;
   font-weight: bold;
@@ -247,55 +171,84 @@
   border-radius: 0;
 }
 
-/* Brutalist checkbox */
-.add-tran-checkbox-group input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid black;
-  margin: 0;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  position: relative;
+@media (max-width: 500px) {
+  .add-tran-transaction-form {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1100px) {
+  .add-tran {
+    height: 110vh;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 2rem 2rem;
+  }
+
+  .add-tran-right-form {
+    padding: 1rem;
+    width: 70%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 900px) {
+  .add-tran {
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 2rem 0.3rem;
+  border: none;
+  border-radius: 0;
   background: white;
-  box-shadow: 2px 2px 0 black;
+  box-shadow: none;
+  }
+
+  .add-tran-right-form {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 650px) {
+  .add-tran {
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 2rem 0.3rem;
+  border: none;
+  border-radius: 0;
+  background: white;
+  box-shadow: none;
+  }
+
+  .add-tran-right-form {
+    display: none;
+  }
+
+  .add-tran-transaction-form h2 {
+  font-size: 1.3rem;
+}
+
+.add-tran-new-cat-row input {
+  font-size: 0.75rem;
+}
+
+.add-tran-form-group input,
+.add-tran-form-group select,
+.add-tran-form-group textarea {
+  font-size: 0.8rem;
 }
 
 .add-tran-checkbox-group input[type="checkbox"]:checked::before {
-  content: '✔';
-  position: absolute;
-  font-size: 14px;
-  font-weight: bold;
-  top: -2px;
-  left: 2px;
-  color: black;
+  font-size: 18px;
 }
 
-.add-tran-checkbox-group input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  margin: 0;
-  margin-right: 0.75rem;
-  border: 2px solid black;
-  box-shadow: 4px 4px 0 black;
-  background: white;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
+.add-tran-form-group label {
+  font-size: 0.9rem;
+}
 }
 
-.add-tran-checkbox-group input[type="checkbox"]:checked::before {
-  content: '✓';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  font-family: monospace;
-}
