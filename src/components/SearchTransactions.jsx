@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './SearchTransactions.css';
 import Navbar from './Navbar';
-import DarkMode from './DarkMode';
 
 
 const SearchTransactions = ({ isLoggedIn, setIsLoggedIn}) => {

@@ -4,12 +4,11 @@ import Navbar from './Navbar';
 import edit from '../assets/edit.svg';
 import deleted from '../assets/delete.svg';
 import EditTransactionForm from './EditTransactionForm';
-import DarkMode from './DarkMode';
 
 
 
 
-const AllTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
+const AllTransactions = ({ isLoggedIn, setIsLoggedIn }) => {
   const [transactions, setTransactions] = useState([]);
 
   const [showForm, setShowForm] = useState(false);
@@ -62,12 +61,71 @@ const AllTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
 
   const sortedTransactions = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  const handleDeleteCategory = (category, type) => {
+    const targetCategory = type === 'income' ? 'Other Income' : 'Other Expense';
+
+    const isConfirmed = window.confirm(
+      `This will move all "${category}" ${type} transactions to "${targetCategory}". Do you want to continue?`
+    );
+    if (!isConfirmed) return;
+
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user?.email) return;
+
+    const allTransactions = JSON.parse(localStorage.getItem("transactions")) || {};
+    const userTransactions = allTransactions[user.email] || [];
+
+    // Update category instead of deleting
+    const updatedUserTx = userTransactions.map(tx => {
+      if (tx.category === category && tx.type === type) {
+        return { ...tx, category: targetCategory };
+      }
+      return tx;
+    });
+
+    allTransactions[user.email] = updatedUserTx;
+
+    setTransactions(updatedUserTx);
+    localStorage.setItem("transactions", JSON.stringify(allTransactions));
+
+    alert(`All "${category}" ${type} transactions were moved to "${targetCategory}".`);
+  };
 
 
   return (
     <div className={`page-wrapper ${showForm ? 'blurred' : ''}`}>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div className="transactions-container">
+        <div className="category-summary">
+          <h3>Category Totals</h3>
+          <div className="category-grid">
+            {['income', 'expense'].map(type => {
+              const categories = {};
+
+              transactions
+                .filter(tx => tx.type === type)
+                .forEach(tx => {
+                  categories[tx.category] = (categories[tx.category] || 0) + Number(tx.amount);
+                });
+
+              return Object.entries(categories).map(([category, total]) => (
+                <div key={`${type}-${category}`} className={`category-card ${type}`}>
+                  <div className="category-name">{category}</div>
+                  <div className="category-total">
+                    {type === 'income' ? '+' : '-'}${total}
+                  </div>
+                  <button
+                    className="delete-category-btn"
+                    onClick={() => handleDeleteCategory(category, type)}
+                  >
+                    Delete Category
+                  </button>
+                </div>
+              ));
+            })}
+          </div>
+        </div>
+
         <div className="transactions-header">
           <h2>All Transactions</h2>
           <p>Manage your income and expense history</p>

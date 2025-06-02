@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 110vh;
 }
 .dark .homepage {
     background-image: url(../assets/bg12.png);

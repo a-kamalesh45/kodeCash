@@ -1,10 +1,16 @@
 .transactions-container {
   max-width: 1000px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 1rem;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dark .transactions-container {
+  background: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-height: 120vh;
 }
 
 .transactions-header {
@@ -302,4 +308,75 @@
   .date-block {
     padding: 0.4rem 0.6rem;
   }
+}
+
+.category-summary {
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.category-summary h3 {
+  margin-bottom: 1rem;
+}
+.dark .category-summary h3 {
+  color: #e9e9e9;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  gap: 1rem;
+}
+
+.category-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.dark .category-card {
+  background: #161616;
+}
+
+.category-card.income {
+  border-left: 5px solid green;
+}
+.category-card.expense {
+  border-left: 5px solid red;
+}
+.dark .category-card.income {
+  border-left: 5px solid rgb(0, 255, 0);
+}
+
+.category-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.category-total {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.dark .category-name {
+  color: rgb(200, 200, 200);
+}
+
+.dark .category-total {
+  color: white;
+}
+
+.delete-category-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.delete-category-btn:hover {
+  background: #e60000;
 }

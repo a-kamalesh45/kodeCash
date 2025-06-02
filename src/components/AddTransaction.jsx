@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './AddTransaction.css';
 import Navbar from './Navbar';
 import rightBg from '../assets/form-bg.png';
-import DarkMode from './DarkMode';
 
 
 const AddTransaction = ({isLoggedIn, setIsLoggedIn}) => {

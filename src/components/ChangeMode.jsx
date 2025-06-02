@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import './ChangeMode.css';
+import sun from '../assets/sun.svg'
+import moon from '../assets/moon.svg'
+
 
 const ChangeMode = ({ isDark, setIsDark }) => {
   useEffect(() => {
@@ -21,14 +24,14 @@ const ChangeMode = ({ isDark, setIsDark }) => {
         <div className="toggle">
           <input type="checkbox" checked={!isDark} readOnly />
           <span className="button"></span>
-          <span className="label">☼</span>
+          <span className="label"><img src={sun} alt="" /></span>
         </div>
       </div>) : 
       (<div className="container" onClick={makeDark}>
         <div className="toggle">
           <input type="checkbox" checked={isDark} readOnly />
           <span className="button"></span>
-          <span className="label">☾</span>
+          <span className="label"><img src={moon} alt="" /></span>
         </div>
       </div>)}
     </div>
