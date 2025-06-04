@@ -20,20 +20,22 @@ const ChangeMode = ({ isDark, setIsDark }) => {
   return (
     <div className="mode-btn-box">
 
-     {isDark ? (<div className="container" onClick={makeLight}>
-        <div className="toggle">
-          <input type="checkbox" checked={!isDark} readOnly />
-          <span className="button"></span>
-          <span className="label"><img src={sun} alt="" /></span>
-        </div>
-      </div>) : 
-      (<div className="container" onClick={makeDark}>
-        <div className="toggle">
-          <input type="checkbox" checked={isDark} readOnly />
-          <span className="button"></span>
-          <span className="label"><img src={moon} alt="" /></span>
-        </div>
-      </div>)}
+      {isDark ? (<div className="nav-btn" onClick={makeLight}>
+        <button>
+          <span class="box">
+            <img className='icon' src={sun} alt="" />
+            <p className="mode-btn-txt">Light</p>
+          </span>
+        </button>
+      </div>) :
+        (<div className="container" onClick={makeDark}>
+          <button>
+            <span class="box">
+              <img className='icon' src={moon} alt="" />
+              <p className="mode-btn-txt">Dark</p>
+            </span>
+          </button>
+        </div>)}
     </div>
   );
 };

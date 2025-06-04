@@ -3,7 +3,7 @@ import './SearchTransactions.css';
 import Navbar from './Navbar';
 
 
-const SearchTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
+const SearchTransactions = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark}) => {
     const [transactions, setTransactions] = useState([]);
     const [filtered, setFiltered] = useState([]);
 
@@ -64,7 +64,7 @@ const SearchTransactions = ({ isLoggedIn, setIsLoggedIn}) => {
 
     return (
         <div className='page-wrapper'>
-            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
             <div className="search-page">
                 <h2>Search & Filter Transactions</h2>
 

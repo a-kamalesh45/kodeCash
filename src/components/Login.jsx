@@ -5,7 +5,7 @@ import logo from '../assets/logo-nav.png'
 import Navbar from './Navbar';
 
 
-const Login = ({ isLoggedIn, setIsLoggedIn }) => {
+const Login = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
 
   const [formData, setFormData] = useState({
     email: '',
@@ -47,7 +47,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <div className="auth-container">
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}  isDark={isDark} setIsDark={setIsDark}/>
       <div className="auth-card">
         <div className="auth-header">
           <div className="logo">

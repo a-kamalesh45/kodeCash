@@ -28,15 +28,15 @@ function App() {
 
   return (
     <Router>
-      <ChangeMode isDark={isDark} setIsDark={setIsDark} />
+      {/* <ChangeMode isDark={isDark} setIsDark={setIsDark} /> */}
       <Routes>
-        <Route path="/" element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/dashboard" element={<Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/add-transaction" element={<AddTransaction isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/all-transactions" element={<AllTransactions isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/search-transactions" element={<SearchTransactions isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/" element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/dashboard" element={<Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/add-transaction" element={<AddTransaction isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/all-transactions" element={<AllTransactions isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/search-transactions" element={<SearchTransactions isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
+        <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark} />} />
       </Routes>
     </Router>
   );

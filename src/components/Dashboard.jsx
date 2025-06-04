@@ -9,7 +9,7 @@ import {
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
 
-const Dashboard = ({ isLoggedIn, setIsLoggedIn}) => {
+const Dashboard = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark}) => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
@@ -90,7 +90,7 @@ const user = JSON.parse(localStorage.getItem("currentUser"));
 
     return (
         <div className='dash-page'>
-            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isDark={isDark} setIsDark={setIsDark}/>
             <div className="dashboard">
                 {/* Summary Cards */}
                 <div className="dashboard-summary">

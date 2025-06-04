@@ -70,7 +70,7 @@
     border-left: 1px solid rgba(253, 253, 253, 0.1);
 }
 
-.nav-links a {
+.nav-links a, .nav-links div {
     text-decoration: none;
     color: #061c38;
     font-weight: 500;
@@ -83,12 +83,14 @@
     border-radius: 8px;
     transition: color 0.3s ease;
     overflow: hidden;
+    cursor: pointer;
 }
-.dark .nav-links a{
+.dark .nav-links a, .dark .nav-links div{
     color: white;
 }
 
-.nav-links a::before {
+.nav-links a::before, 
+.nav-links div::before {
     content: '';
     position: absolute;
     top: 0;
@@ -99,7 +101,8 @@
     transition: width 0.3s ease;
     z-index: -1;
 }
-.dark .nav-links a::before {
+.dark .nav-links a::before, 
+.dark .nav-links div::before {
     content: '';
     position: absolute;
     top: 0;
@@ -111,15 +114,18 @@
     z-index: -1;
 }
 
-.nav-links a:hover::before {
+.nav-links a:hover::before, 
+.nav-links div:hover::before {
     width: 100%;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links div:hover {
     color: #f4fcff;
     /* background-color: rgba(0, 119, 255, 0.15); */
 }
-.dark .nav-links a:hover {
+.dark .nav-links a:hover,
+.dark .nav-links div:hover {
     color: #000000;
     /* background-color: rgba(0, 119, 255, 0.15); */
 }
@@ -133,11 +139,13 @@
 }
 
 
-.nav-links a:hover .icon {
+.nav-links a:hover .icon,
+.nav-links div:hover .icon {
     filter: invert(0%);
     transform: scale(1.1);
 }
-.dark .nav-links a:hover .icon {
+.dark .nav-links a:hover .icon,
+.dark .nav-links div:hover .icon {
     filter: invert(100%);
     transform: scale(1.1);
 }
@@ -204,7 +212,8 @@
     margin: 1rem 0;
 }
 
-.nav-links-hamburg a{
+.nav-links-hamburg a,
+.nav-links-hamburg div{
     text-decoration: none;
     color: #ffffff;
     display: flex;
@@ -249,7 +258,8 @@
     height: 1.6rem;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links div {
     font-size: 0.82rem;
     padding: 0 0.75rem;
 }
@@ -285,7 +295,8 @@
     height: 1.6rem;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links div {
     font-size: 0.75rem;
     padding: 0 0.6rem;
 }
@@ -305,7 +316,7 @@
 
 }
 
-@media (max-width: 815px) {
+@media (max-width: 853px) {
     .navbar2 {
         display: none;
     }
