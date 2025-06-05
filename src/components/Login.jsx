@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo-nav.png'
 import Navbar from './Navbar';
 
@@ -100,7 +101,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
               <span className="checkmark"></span>
               Remember me
             </label>
-            <a href="#" className="auth-forgot-password">Forgot Password?</a>
+            <Link to="" className="auth-forgot-password">Forgot Password?</Link>
           </div>
 
           <button type="submit" className="auth-button">
@@ -109,7 +110,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
         </form>
 
         <div className="auth-footer">
-          <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+          <p>Don't have an account? <Link to="/signup">Sign up here</Link></p>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
 import logo from '../assets/logo-nav.png';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 
 const Signup = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
@@ -188,7 +189,7 @@ const Signup = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
             <label className="checkbox-container">
               <input type="checkbox" required />
               <span className="checkmark"></span>
-              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+              I agree to the <Link to="#">Terms of Service</Link> and <Link to="/">Privacy Policy</Link>
             </label>
           </div>
 
