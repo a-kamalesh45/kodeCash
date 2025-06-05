@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
 import logo from '../assets/logo-nav.png';
 import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
 
 
 const Signup = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
