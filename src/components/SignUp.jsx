@@ -188,7 +188,7 @@ const Signup = ({ isLoggedIn, setIsLoggedIn, isDark, setIsDark }) => {
             <label className="checkbox-container">
               <input type="checkbox" required />
               <span className="checkmark"></span>
-              I agree to the <Link to="#">Terms of Service</Link> and <Link to="/">Privacy Policy</Link>
+              I agree to the <Link to="">Terms of Service</Link> and <Link to="">Privacy Policy</Link>
             </label>
           </div>
 
